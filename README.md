@@ -55,7 +55,7 @@ After reviewing several different ways to go about it, I settled for the below h
 
 I went for a very basic hardware configuration to prove that my planned architecture indeed works and learn from the experience to build a better base mostly using the same sensors used on the prototype. Following are the hardware I used to build the Architecture:
 
-1. 4x 300 rpm 12V motors with encoders
+1. 4x 300 rpm [12V motors](https://www.aliexpress.com/item/4001062487473.html?spm=a2g0s.9042311.0.0.74e34c4du4o9UG) with encoders
 
 2. Microcontroller
 
@@ -69,9 +69,9 @@ I went for a very basic hardware configuration to prove that my planned architec
 
 4. Perception Layer
 
-  - RPLidar
+   - RPLidar
 
-  - MPU6050
+   - MPU6050
 
 This concept is highly inspired by Sung’s Personal Robotic Companion which is based on similar architecture as I had originally decided to proceed with. However, there are several differences and I have written my own source codes for implementation which can be found in my GitHub repository. 
 
