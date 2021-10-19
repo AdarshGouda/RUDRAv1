@@ -79,9 +79,10 @@ Below are some images of the prototype:
 
 <img src="images/1.png" width=800>
 <img src="images/2.png" width=800>
+
 After several iterations and fine-tuning, I managed to implement the following:
 
-[Arduino Code:](https://github.com/AdzTheDemon/RUDRAv1/blob/main/Arduino/motor_controller_v2_AFMS/motor_controller_v2_AFMS.ino)
+### [Arduino Code:](https://github.com/AdzTheDemon/RUDRAv1/blob/main/Arduino/motor_controller_v2_AFMS/motor_controller_v2_AFMS.ino)
 
 1. PID control and tuning for 4 motors
 
@@ -101,7 +102,7 @@ After several iterations and fine-tuning, I managed to implement the following:
 
    - The actual wheel rpm is then published to ROS. The wheel speed is subscribed by the base control program running on Jetson Nano.
 
-[Jetson Nano Code:](https://github.com/AdzTheDemon/RUDRAv1/blob/main/Rudrav1/src/nox_controller.cpp)
+### [Jetson Nano Code:](https://github.com/AdzTheDemon/RUDRAv1/blob/main/Rudrav1/src/nox_controller.cpp)
 
 1. This portion of the code is pretty much taken from Sung’s implementation.
 
