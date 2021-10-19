@@ -189,6 +189,7 @@ There is no launch file for gmapping, so having launched the rur_bringup package
 After the map is complete you can launch the rur_navigation package which will open Rviz automatically. Use: roslaunch rur_navigation rur_navigation.launch map_file:=$HOME/map.yaml to connect to the map you saved.
 
 Some pictures below:
+
 <img src="images/4.png" width=800>
 <img src="images/5.png" width=800>
 <img src="images/6.png" width=800>
