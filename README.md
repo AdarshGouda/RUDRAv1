@@ -51,7 +51,7 @@ After reviewing several different ways to go about it, I settled for the below h
 
    - PS2 controller for manual control of the robot.
 
-RUDRAv1: Concept Validation & Prototype
+## RUDRAv1: Concept Validation & Prototype
 
 I went for a very basic hardware configuration to prove that my planned architecture indeed works and learn from the experience to build a better base mostly using the same sensors used on the prototype. Following are the hardware I used to build the Architecture:
 
