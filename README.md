@@ -1,4 +1,4 @@
-<img src="images/RUDRA.png" width=600>
+<img src="images/RUDRA.png" width=800>
 
 I always wanted to build an autonomous robot from scratch that is capable of Simultaneous Localization And Mapping (SLAM) and Path Planning. Beginning of 2021, I started exploring various concepts and here in this article, I will try to cover the main aspects of the robot hardware, build, and the codes that I ended up implementing.
 
@@ -59,26 +59,26 @@ I went for a very basic hardware configuration to prove that my planned architec
 
 2. Microcontroller
 
-   - Arduino Mega connected to Jetson Nano over Rosserial
+   - [Arduino Mega](https://www.amazon.ca/Elegoo-Board-ATmega2560-ATMEGA16U2-Arduino/dp/B01H4ZLZLQ/ref=sr_1_1_sspa?dchild=1&keywords=Arduino+Mega&qid=1619934245&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFaMzhDM0NRVDJVT1YmZW5jcnlwdGVkSWQ9QTA2NDU2ODMzT1Q2NjlBREJQOVBWJmVuY3J5cHRlZEFkSWQ9QTA0NzI1MDAyMk5OTVhXSThaRERTJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==) connected to Jetson Nano over Rosserial
 
-   - Sensor Shield connected to Mega – to enable easier connections to motor encoders and sensors.
+   - [Sensor Shield](https://www.amazon.ca/KEYESTUDIO-MEGA-Sensor-Shield-V1/dp/B0169YXYEY/ref=sr_1_4?crid=1ZAD7FXC7RMDX&dchild=1&keywords=arduino+mega+sensor+shield&qid=1619934266&sprefix=Arduino+Mega+senso%2Caps%2C192&sr=8-4) connected to Mega – to enable easier connections to motor encoders and sensors.
 
 3. Motor Drivers
 
-   - 2x L298N Dual H Bridge Motor Driver
+   - 2x [L298N](https://www.amazon.ca/PChero-2Packs-Controller-Stepper-Arduino/dp/B07C4B3DL4/ref=sr_1_7?crid=Q9XH0ZTWNE0T&dchild=1&keywords=l298n&qid=1619934370&sprefix=L29%2Caps%2C215&sr=8-7) Dual H Bridge Motor Driver
 
 4. Perception Layer
 
-   - RPLidar
+   - [RPLidar](https://www.amazon.ca/Slamtec-RPLIDAR-Scanning-Avoidance-Navigation/dp/B07TJW5SXF/ref=sr_1_7?crid=EY9SGC2ZD5MG&dchild=1&keywords=rplidar+a1&qid=1619934486&sprefix=RPlid%2Caps%2C198&sr=8-7)
 
-   - MPU6050
+   - [MPU6050](https://www.robotshop.com/en/mpu6050-6-dof-gyro-accelerometer-imu.html)
 
-This concept is highly inspired by Sung’s Personal Robotic Companion which is based on similar architecture as I had originally decided to proceed with. However, there are several differences and I have written my own source codes for implementation which can be found in my GitHub repository. 
+This concept is highly inspired by [Sung’s](https://sungjik.wordpress.com/2015/09/28/my_personal_robotic_companion/) Personal Robotic Companion which is based on similar architecture as I had originally decided to proceed with. However, there are several differences and I have written my own source codes for implementation which can be found in my GitHub repository. 
 
 Below are some images of the prototype:
 
-No alt text provided for this image
-No alt text provided for this image
+<img src="images/1.png" width=800>
+<img src="images/2.png" width=800>
 After several iterations and fine-tuning, I managed to implement the following:
 
 Arduino Code:
