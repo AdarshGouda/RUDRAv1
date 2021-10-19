@@ -31,46 +31,47 @@ After reviewing several different ways to go about it, I settled for the below h
 
    - IMU - MPU6050
 
-c.      SLAM layer:
+3. SLAM layer:
 
-  ·        ROS Melodic as the middleware - Navigation Stack, Rosserial, RPLidar and gmapping
+   - ROS Melodic as the middleware - Navigation Stack, Rosserial, RPLidar and gmapping
 
-  ·        Jetson Nano operating on Ubuntu 18.04
+   - Jetson Nano operating on Ubuntu 18.04
 
-  ·        Battery pack for Jetson Nano
+   - Battery pack for Jetson Nano
 
-d.      Base Layer:
+4. Base Layer:
 
-  ·        A suitable microcontroller - Arduino/ Teensy
+   - A suitable microcontroller - Arduino/ Teensy
 
-  ·        Motor drivers
+   - Motor drivers
 
-  ·        12v DC motors
+   - 12v DC motors
 
-  ·        12v Lipo batteries
+   - 12v Lipo batteries
 
-  ·        PS2 controller for manual control of the robot.
+   - PS2 controller for manual control of the robot.
 
 RUDRAv1: Concept Validation & Prototype
+
 I went for a very basic hardware configuration to prove that my planned architecture indeed works and learn from the experience to build a better base mostly using the same sensors used on the prototype. Following are the hardware I used to build the Architecture:
 
-1)     4x 300 rpm 12V motors with encoders
+1. 4x 300 rpm 12V motors with encoders
 
-2)     Microcontroller
+2. Microcontroller
 
-  a.      Arduino Mega connected to Jetson Nano over Rosserial
+   - Arduino Mega connected to Jetson Nano over Rosserial
 
-  b.      Sensor Shield connected to Mega – to enable easier connections to motor encoders and sensors.
+   - Sensor Shield connected to Mega – to enable easier connections to motor encoders and sensors.
 
-3)     Motor Drivers
+3. Motor Drivers
 
-  a.      2x L298N Dual H Bridge Motor Driver
+   - 2x L298N Dual H Bridge Motor Driver
 
-4)     Perception Layer
+4. Perception Layer
 
-  a.      RPLidar
+  - RPLidar
 
-  b.      MPU6050
+  - MPU6050
 
 This concept is highly inspired by Sung’s Personal Robotic Companion which is based on similar architecture as I had originally decided to proceed with. However, there are several differences and I have written my own source codes for implementation which can be found in my GitHub repository. 
 
