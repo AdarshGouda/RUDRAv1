@@ -21,15 +21,15 @@ After reviewing several different ways to go about it, I settled for the below h
 
 1. Kinematics: Differential 4-wheel drive
 
-b.      Perception Layer:
+2. Perception Layer:
 
-  ·        Lidar - RPLidar
+   - Lidar - RPLidar
 
-  ·        Depth Camera - 
+   - Depth Camera
 
-  ·        IR camera 
+   - IR camera 
 
-  ·        IMU - MPU6050
+   - IMU - MPU6050
 
 c.      SLAM layer:
 
