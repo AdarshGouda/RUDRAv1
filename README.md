@@ -23,33 +23,33 @@ a.      Kinematics: Differential 4-wheel drive
 
 b.      Perception Layer:
 
-·        Lidar - RPLidar
+  ·        Lidar - RPLidar
 
-·        Depth Camera - 
+  ·        Depth Camera - 
 
-·        IR camera 
+  ·        IR camera 
 
-·        IMU - MPU6050
+  ·        IMU - MPU6050
 
 c.      SLAM layer:
 
-·        ROS Melodic as the middleware - Navigation Stack, Rosserial, RPLidar and gmapping
+  ·        ROS Melodic as the middleware - Navigation Stack, Rosserial, RPLidar and gmapping
 
-·        Jetson Nano operating on Ubuntu 18.04
+  ·        Jetson Nano operating on Ubuntu 18.04
 
-·        Battery pack for Jetson Nano
+  ·        Battery pack for Jetson Nano
 
 d.      Base Layer:
 
-·        A suitable microcontroller - Arduino/ Teensy
+  ·        A suitable microcontroller - Arduino/ Teensy
 
-·        Motor drivers
+  ·        Motor drivers
 
-·        12v DC motors
+  ·        12v DC motors
 
-·        12v Lipo batteries
+  ·        12v Lipo batteries
 
-·        PS2 controller for manual control of the robot.
+  ·        PS2 controller for manual control of the robot.
 
 RUDRAv1: Concept Validation & Prototype
 I went for a very basic hardware configuration to prove that my planned architecture indeed works and learn from the experience to build a better base mostly using the same sensors used on the prototype. Following are the hardware I used to build the Architecture:
@@ -58,19 +58,19 @@ I went for a very basic hardware configuration to prove that my planned architec
 
 2)     Microcontroller
 
-a.      Arduino Mega connected to Jetson Nano over Rosserial
+  a.      Arduino Mega connected to Jetson Nano over Rosserial
 
-b.      Sensor Shield connected to Mega – to enable easier connections to motor encoders and sensors.
+  b.      Sensor Shield connected to Mega – to enable easier connections to motor encoders and sensors.
 
 3)     Motor Drivers
 
-a.      2x L298N Dual H Bridge Motor Driver
+  a.      2x L298N Dual H Bridge Motor Driver
 
 4)     Perception Layer
 
-a.      RPLidar
+  a.      RPLidar
 
-b.      MPU6050
+  b.      MPU6050
 
 This concept is highly inspired by Sung’s Personal Robotic Companion which is based on similar architecture as I had originally decided to proceed with. However, there are several differences and I have written my own source codes for implementation which can be found in my GitHub repository. 
 
@@ -84,21 +84,21 @@ Arduino Code:
 
 1)     PID control and tuning for 4 motors
 
-a.      The main loop in the Arduino converts encoder counts into the actual motor rpm of all 4 motors. The PID ensures that all motors have the same RPM at any given point in time.
+  a.      The main loop in the Arduino converts encoder counts into the actual motor rpm of all 4 motors. The PID ensures that all motors have the same RPM at any given point in time.
 
-b.      This improves the Odometry very much but still I found that its not as accurate as I needed it to be.
+  b.      This improves the Odometry very much but still I found that its not as accurate as I needed it to be.
 
 2)     Subscribe to cmd_vel topic
 
-a.      The code subscribes to cmd_vel topic which sets the demanded speed for the motors m/s and also provides angular velocity for turning in rad/sec
+  a.      The code subscribes to cmd_vel topic which sets the demanded speed for the motors m/s and also provides angular velocity for turning in rad/sec
 
-b.      The Arduino code converts the demand speed to individual wheel velocities and drive the robot base via the L298N bridge
+  b.      The Arduino code converts the demand speed to individual wheel velocities and drive the robot base via the L298N bridge
 
 3)     Publish Actual Wheel speeds
 
-a.      The wheel encoders provide counts per revolution of each wheel which can be used to determine the actual when RPM.
+  a.      The wheel encoders provide counts per revolution of each wheel which can be used to determine the actual when RPM.
 
-b.      The actual wheel rpm is then published to ROS. The wheel speed is subscribed by the base control program running on Jetson Nano.
+  b.      The actual wheel rpm is then published to ROS. The wheel speed is subscribed by the base control program running on Jetson Nano.
 
 Jetson Nano Code:
 
