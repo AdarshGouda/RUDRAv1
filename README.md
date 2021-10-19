@@ -19,7 +19,7 @@ Architecture Exploration:
 
 After reviewing several different ways to go about it, I settled for the below hardware-software stack.
 
-a.      Kinematics: Differential 4-wheel drive
+1. Kinematics: Differential 4-wheel drive
 
 b.      Perception Layer:
 
